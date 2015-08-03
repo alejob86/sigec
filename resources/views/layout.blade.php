@@ -190,20 +190,11 @@
                                         <div class="row">
                                             <ul class="col-sm-2 list-unstyled">
                                                 <li>
-                                                    <p class="title">Standard</p>
+                                                    <p class="title">{{ trans("module.module") }}</p>
                                                 </li>
-                                                <li><a href="javascript:;"> Slick Mega Navigation </a>
-                                                </li>
-                                                <li><a href="javascript:;"> Built in BS3+</a>
-                                                </li>
-                                                <li><a href="javascript:;"> Full Customizable </a>
-                                                </li>
-                                                <li><a href="javascript:;"> Huge Components </a>
-                                                </li>
-                                                <li><a href="javascript:;"> Tons of widgets </a>
-                                                </li>
-                                                <li><a href="javascript:;"> Fontawesome </a>
-                                                </li>
+                                                <li>
+                                                	<a href="javascript:;"> {{ trans("module.people") }}</a>
+                                                </li>                                                
                                             </ul>                                            
                                         </div>
                                     </div>
@@ -212,24 +203,19 @@
                         </li>
 
                         <!-- Classic dropdown -->
-                        <li class="dropdown"><a href="javascript:;" data-toggle="dropdown" class="dropdown-toggle"> English  <b
+                        <li class="dropdown"><a href="javascript:;" data-toggle="dropdown" class="dropdown-toggle"> 
+                                <img src="img/flags/usa_flag.jpg" alt=""/> {{ App::getLocale() }} <b
                                 class=" fa fa-angle-down"></b></a>
                             <ul role="menu" class="dropdown-menu language-switch">
                                 <li>
-                                    <a tabindex="-1" href="javascript:;"><span> German </span><img src="img/flags/germany_flag.jpg" alt=""/></a>
-                                </li>
-                                <li>
-                                    <a tabindex="-1" href="javascript:;"><span> Italian </span> <img src="img/flags/italy_flag.jpg" alt=""/></a>
-                                </li>
-                                <li>
-                                    <a tabindex="-1" href="javascript:;"><span> French </span> <img src="img/flags/french_flag.jpg" alt=""/></a>
+                                    <a tabindex="-1" href="javascript:;"><span> English </span><img src="img/flags/germany_flag.jpg" alt=""/></a>
                                 </li>
                                 <li>
                                     <a tabindex="-1" href="javascript:;"><span> Spanish </span> <img src="img/flags/spain_flag.jpg" alt=""/></a>
                                 </li>
                                 <li>
-                                    <a tabindex="-1" href="javascript:;"><span> Russian </span> <img src="img/flags/russia_flag.jpg" alt=""/></a>
-                                </li>
+                                    <a tabindex="-1" href="javascript:;"><span> Portugués </span> <img src="img/flags/brazil_flag.jpg" alt=""/></a>
+                                </li>                                
                             </ul>
                         </li>
 

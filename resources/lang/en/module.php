@@ -13,5 +13,6 @@ return [
     */
 
     'module' => 'module',
+    'people' => 'people',
 
 ];

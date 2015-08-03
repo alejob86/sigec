@@ -12,7 +12,7 @@ return [
     |
     */
 
-    'module' => 'modulo',
-    'people' => 'personas',
+    'module' => 'módulo',
+    'people' => 'pessoas',
 
 ];
