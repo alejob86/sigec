@@ -24,6 +24,11 @@ class AuthController extends Controller
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
     /**
+     * Redirect to when authentication was OK
+    */
+    protected $redirectTo = 'dashboard';
+
+    /**
      * Create a new authentication controller instance.
      *
      * @return void
