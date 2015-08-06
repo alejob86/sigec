@@ -156,12 +156,6 @@
                                 <li><a href="auth/logout"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
                             </ul>
                         </li>
-                        <li>
-                            <div class="sb-toggle-right">
-                                <i class="fa fa-indent"></i>
-                            </div>
-                        </li>
-
                     </ul>
                 </div>
                 <!--right notification end-->
