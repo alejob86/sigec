@@ -53,3 +53,7 @@ Route::get('login', function()
 Route::get('auth/register', 'Auth\AuthController@getRegister');
 
 Route::post('auth/register', 'Auth\AuthController@postRegister');
+
+// People routes...
+
+Route::get('people/list', 'PeopleController@getList');
