@@ -57,3 +57,6 @@ Route::post('auth/register', 'Auth\AuthController@postRegister');
 // People routes...
 
 Route::get('people/list', 'PeopleController@getList');
+
+// Locale routes...
+Route::get('lang/{lang}', 'LanguageController@switchLang');

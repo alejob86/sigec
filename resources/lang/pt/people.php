@@ -14,6 +14,8 @@ return [
 
     'people' => 'pessoas',
     'list'   => 'lista',
-
+    'add'    => 'adicionar',
+    'management_message'    =>  'Add, Edit and Delete Users from this panel',
+    'operation'             =>  'operação',
 
 ];

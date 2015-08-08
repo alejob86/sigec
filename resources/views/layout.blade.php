@@ -52,14 +52,27 @@
                     <li>
                         <h3 class="navigation-title">{{ trans('app.navigation') }}</h3>
                     </li>
-                    <li><a href="/"><i class="fa fa-home"></i> <span>{{ trans('app.dashboard') }}</span></a></li>
-                    <li class="menu-list nav-active">
+                    <li><a href="{{ URL::to('dashboard') }}"><i class="fa fa-home"></i> <span>{{ trans('app.dashboard') }}</span></a></li>
+                    <li class="menu-list">
+                        <a href=""><i class="fa fa-language"></i>  <span>{{ trans('app.language') }}</span></a>
+                        <ul class="child-list">
+                            <li>
+                                <a tabindex="-1" href="{{URL::to('lang/en')}}"><span></span><img src="{{URL::to('img/flags/usa_flag.jpg')}}" alt=""/></a>
+                            </li>
+                            <li>
+                                <a tabindex="-1" href="{{URL::to('lang/es')}}"><span></span> <img src="{{URL::to('img/flags/spain_flag.jpg')}}" alt=""/></a>
+                            </li>
+                            <li>
+                                <a tabindex="-1" href="{{URL::to('lang/pt')}}"><span></span> <img src="{{URL::to('img/flags/brazil_flag.jpg')}}" alt=""/></a>
+                            </li>           
+                        </ul>
+                    </li>  
+                    <li class="menu-list">
                         <a href=""><i class="fa fa-users"></i>  <span>{{ trans('module.people') }}</span></a>
                         <ul class="child-list">
-                            <li><a href="people/list"> {{ trans('people.list') }} </a></li>           
+                            <li><a href="{{URL::to('people/list')}}"> {{ trans('people.list') }} </a></li>           
                         </ul>
-                    </li>                    
-
+                    </li>  
                 </ul>
                 <!--sidebar nav end-->
 
@@ -78,7 +91,7 @@
                     <a href="/">
                         <img src="{{ URL::to('img/logo-icon.png') }}" alt="">
                         <!--<i class="fa fa-maxcdn"></i>-->
-                        <span class="brand-name">SlickLab</span>
+                        <span class="brand-name">{{trans('app.name')}}</span>
                     </a>
                 </div>
 
@@ -119,6 +132,8 @@
                             </ul>
                         </li>
 
+                        
+
                         <!-- Classic dropdown -->
                         <li class="dropdown"><a href="javascript:;" data-toggle="dropdown" class="dropdown-toggle"> 
                                 <img src="{{URL::to('img/flags/usa_flag.jpg')}}" alt=""/> {{ App::getLocale() }} <b
@@ -146,14 +161,14 @@
                 <div class="right-notification">
                     <ul class="notification-menu">
                         
-
+                        
                         <li>
                             <a href="javascript:;" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
                                 {{ Auth::user()->name }}
                                 <span class=" fa fa-angle-down"></span>
                             </a>
                             <ul class="dropdown-menu dropdown-usermenu purple pull-right">                                
-                                <li><a href="auth/logout"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                                <li><a href="{{URL::to('auth/logout')}}"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -166,20 +181,9 @@
 
             <!-- page head start-->
             <div class="page-head">
-                <h3>
-                    Dashboard
-                </h3>
-                <span class="sub-title">Welcome to SlickLab dashboard</span>
-                <div class="state-information">
-                    <div class="state-graph">
-                        <div id="balance" class="chart"></div>
-                        <div class="info">Balance $ 2,317</div>
-                    </div>
-                    <div class="state-graph">
-                        <div id="item-sold" class="chart"></div>
-                        <div class="info">Item Sold 1230</div>
-                    </div>
-                </div>
+
+                @yield('page-head')
+                
             </div>
             <!-- page head end-->
 

@@ -12,8 +12,11 @@ return [
     |
     */
 
-    'title' => 'SIGEC',
-    'navigation' => 'navegação',
-    'dashboard' => 'painel de controle',
+    'title'         => 'SIGEC',
+    'name'          => 'SIGEC',
+    'navigation'    => 'navegação',
+    'dashboard'     => 'painel de controle',
+    'language'      => 'língua',
+    'welcome_message'   => 'Bem-vindo ao SIGEC um sistema para gerenciar Instituições educacionais',
 
 ];
