@@ -1,5 +1,15 @@
 @extends('layout')
 
+@section('css')
+
+	<link href="{{URL::to('js/data-table/css/jquery.dataTables.css')}}" rel="stylesheet">
+    <link href="{{URL::to('js/data-table/css/dataTables.tableTools.css')}}" rel="stylesheet">
+    <link href="{{URL::to('js/data-table/css/dataTables.colVis.min.css')}}" rel="stylesheet">
+    <link href="{{URL::to('js/data-table/css/dataTables.responsive.css')}}" rel="stylesheet">
+    <link href="{{URL::to('js/data-table/css/dataTables.scroller.css')}}" rel="stylesheet">
+
+@stop
+
 @section('page-head')
 
 	<h3>
@@ -80,7 +90,7 @@
 	                    Jones
 	                </td>
 	                <td>
-	                    Pencil
+	                    Penciles
 	                </td>
 	                <td>	                    
 	                    <a class="btn btn-info" data-toggle="modal" href="#edit">
@@ -109,6 +119,25 @@
                 <div class="modal-body">
                     <p>Enter your e-mail address below to reset your password.</p>
                     <input type="text" name="email" placeholder="Email" autocomplete="off" class="form-control placeholder-no-fix">
+					
+					{!! Form::open(['url' => Config::get('constants.PEOPLE_MODULE_NAME') ]) !!}
+					
+						<div class="form-group">
+							{!! Form::label('name','Name :') !!}
+							{!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Name']) !!}
+						</div>
+
+						<div class="form-group">
+							{!! Form::label('name','Last Name :') !!}
+							{!! Form::text('last_name', null, ['class' => 'form-control', 'placeholder' => 'Name']) !!}
+						</div>
+
+						<div class="form-group">
+							
+							{!! Form::submit('Add people', ['class' => 'btn btn-primary form-control']) !!}
+						</div>
+					
+					{!! Form::close() !!}
 
                 </div>
                 <div class="modal-footer">
@@ -119,4 +148,18 @@
         </div>
     </div>
     <!-- modal -->
+@stop
+
+@section('js')
+
+	<!--Data Table-->
+	<script src="{{URL::to('js/data-table/js/jquery.dataTables.min.js')}}"></script>
+	<script src="{{URL::to('js/data-table/js/dataTables.tableTools.min.js')}}"></script>
+	<script src="{{URL::to('js/data-table/js/bootstrap-dataTable.js')}}"></script>
+	<script src="{{URL::to('js/data-table/js/dataTables.colVis.min.js')}}"></script>
+	<script src="{{URL::to('js/data-table/js/dataTables.responsive.min.js')}}"></script>
+	<script src="{{URL::to('js/data-table/js/dataTables.scroller.min.js')}}"></script>
+	<!--data table init-->
+	<script src="{{URL::to('js/data-table-init.js')}}"></script>
+
 @stop

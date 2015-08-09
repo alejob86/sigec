@@ -16,6 +16,9 @@
     <!--switchery-->
     <link href="{{ URL::to('js/switchery/switchery.min.css') }}" rel="stylesheet" type="text/css" media="screen" />
 
+    <!--custom css-->
+    @yield('css')
+
     <!--common style-->
     <link href="{{ URL::to('css/style.css') }}" rel="stylesheet">
     <link href="{{ URL::to('css/style-responsive.css') }}" rel="stylesheet">
@@ -71,7 +74,7 @@
                     <li class="menu-list">
                         <a href=""><i class="fa fa-users"></i>  <span>{{ trans('module.people') }}</span></a>
                         <ul class="child-list">
-                            <li><a href="{{URL::to('people/list')}}"> {{ trans('people.list') }} </a></li>           
+                            <li><a href="{{URL::to('people')}}"> {{ trans('people.list') }} </a></li>           
                         </ul>
                     </li>  
                 </ul>
@@ -224,6 +227,8 @@
 <script src="{{ URL::to('js/sparkline/jquery.sparkline.js') }}"></script>
 <script src="{{ URL::to('js/sparkline/sparkline-init.js') }}"></script>
 
+<!--custom js-->
+@yield('js')
 
 <!--common scripts for all pages-->
 <script src="{{ URL::to('js/scripts.js') }}"></script>
