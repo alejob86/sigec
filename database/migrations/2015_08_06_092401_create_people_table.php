@@ -22,7 +22,7 @@ class CreatePeopleTable extends Migration
             $table->string('street_number', 100);
             $table->string('floor', 5);
             $table->string('department', 5);
-            $table->string('neightborhood', 5);
+            $table->string('neightborhood', 100);
             $table->string('country', 100);
             $table->string('province', 100);
             $table->string('locality', 100);
@@ -33,6 +33,7 @@ class CreatePeopleTable extends Migration
             $table->string('email', 150);
             $table->string('facebook', 150);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

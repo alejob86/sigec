@@ -56,13 +56,11 @@ Route::post('auth/register', 'Auth\AuthController@postRegister');
 
 // People routes...
 
-Route::get('people', 'PeopleController@index');
-Route::get('people/create', 'PeopleController@create');
-Route::get('people/list', 'PeopleController@getList');
+Route::get('people/delete/{id}', 'PeopleController@delete');
+Route::resource('people','PeopleController');
 
-Route::post('people', 'PeopleController@store');
+
 
 
 // Locale routes...
 Route::get('lang/{lang}', 'LanguageController@switchLang');
-

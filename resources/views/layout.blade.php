@@ -64,7 +64,7 @@
                             @foreach (Config::get('languages') as $lang => $language)
                                 @if ($lang != App::getLocale())
                                     <li>
-                                        <a tabindex="-1" href="{{URL::to('lang/'.$lang)}}"><img src="{{URL::to('img/flags/'.$lang.'.png')}}" alt=""/><span> {{trans("app.$lang")}} </span></a>
+                                        <a tabindex="-1" href="{{URL::to('lang/'.$lang)}}"><img src="{{URL::to('img/flags/'.$lang.'.png')}}" alt=""/> {{trans("app.$lang")}} </a>
                                     </li>
                                 @endif
                             @endforeach                                   
@@ -101,7 +101,7 @@
 
                 <div class="icon-logo dark-logo-bg hidden-xs hidden-sm">
                     <a href="/">
-                        <img src="img/logo-icon.png" alt="">
+                        <img src="{{ URL::to('img/logo-icon.png') }}" alt="">
                         <!--<i class="fa fa-maxcdn"></i>-->
                     </a>
                 </div>

@@ -31,8 +31,8 @@
 	            <header class="panel-heading ">
 	                {{trans('people.people')}}
 	                <span class="tools pull-right">	                	
-	      				<a class="btn btn-primary" data-toggle="modal" href="#forgotPass">
-	                    	<i class="fa fa-plus">{{trans('people.add')}}</i>
+	      				<a class="btn" href="{{ action( 'PeopleController@create' ) }}">
+	                    	<i class="fa fa-plus fa-lg"><span> {{trans('people.add')}}</span></i>
 	                    </a>
 	                </span>
 	            </header>
@@ -40,16 +40,13 @@
 	            <thead>
 	            <tr>
 	                <th>
-	                    OrderDate
+	                    {{trans('people.name')}}
 	                </th>
 	                <th>
-	                    Region
+	                    {{trans('people.last_name')}}
 	                </th>
 	                <th>
-	                    Rep
-	                </th>
-	                <th>
-	                    Item
+	                    {{trans('people.email')}}
 	                </th>
 	                <th>
 	                    {{trans('people.operation')}}
@@ -57,97 +54,32 @@
 	            </tr>
 	            </thead>
 	            <tbody>
-	            <tr>
-	                <td>
-	                    1/6/10
-	                </td>
-	                <td>
-	                    Quebec
-	                </td>
-	                <td>
-	                    Jones
-	                </td>
-	                <td>
-	                    Pencil
-	                </td>
-	                <td>
-	                    <a class="btn btn-info" data-toggle="modal" href="#edit">
-	                    	<i class="fa fa-edit fa-lg"></i>
-	                    </a>	
-	                    <a class="btn btn-danger" data-toggle="modal" href="#delete">
-	                    	<i class="fa fa-trash-o fa-lg"></i>
-	                    </a>
-	                </td>
-	            </tr>
-	            <tr>
-	                <td>
-	                    1/6/10
-	                </td>
-	                <td>
-	                    Quebec
-	                </td>
-	                <td>
-	                    Jones
-	                </td>
-	                <td>
-	                    Penciles
-	                </td>
-	                <td>	                    
-	                    <a class="btn btn-info" data-toggle="modal" href="#edit">
-	                    	<i class="fa fa-edit fa-lg"></i>
-	                    </a>	
-	                    <a class="btn btn-danger" data-toggle="modal" href="#delete">
-	                    	<i class="fa fa-trash-o fa-lg"></i>
-	                    </a>
-	                </td>
-	            </tr>
+	            
+	            	@foreach ($people as $person)
+	            		<tr>
+	            			<td>{{ $person->name }}</td>
+	            			<td>{{ $person->last_name }}</td>
+	            			<td>{{ $person->email }}</td>
+	            			<td>
+	            				<a class="btn" href="{{ action( 'PeopleController@show', [$person->id] ) }}">
+			                    	<i class="fa fa-file-pdf-o fa-lg"></i>
+			                    </a>
+			                    <a class="btn " href="{{ action( 'PeopleController@edit', [$person->id] ) }}">
+			                    	<i class="fa fa-edit fa-lg"></i>
+			                    </a>	
+			                    <a class="btn btn-danger" href="{{ URL::to( 'people/delete/'.$person->id ) }}">
+			                    	<i class="fa fa-trash-o fa-lg"></i>
+			                    </a>
+			                </td>
+	            		</tr>
+	            	@endforeach
+	            
 	            </tbody>
 	            </table>
 	        </section>
 	    </div>
 	</div>
 
-
-	<!-- Modal -->
-    <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="forgotPass" class="modal fade">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title">Forgot Password ?</h4>
-                </div>
-                <div class="modal-body">
-                    <p>Enter your e-mail address below to reset your password.</p>
-                    <input type="text" name="email" placeholder="Email" autocomplete="off" class="form-control placeholder-no-fix">
-					
-					{!! Form::open(['url' => Config::get('constants.PEOPLE_MODULE_NAME') ]) !!}
-					
-						<div class="form-group">
-							{!! Form::label('name','Name :') !!}
-							{!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Name']) !!}
-						</div>
-
-						<div class="form-group">
-							{!! Form::label('name','Last Name :') !!}
-							{!! Form::text('last_name', null, ['class' => 'form-control', 'placeholder' => 'Name']) !!}
-						</div>
-
-						<div class="form-group">
-							
-							{!! Form::submit('Add people', ['class' => 'btn btn-primary form-control']) !!}
-						</div>
-					
-					{!! Form::close() !!}
-
-                </div>
-                <div class="modal-footer">
-                    <button data-dismiss="modal" class="btn btn-default" type="button">Cancel</button>
-                    <button class="btn btn-success" type="button">Submit</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- modal -->
 @stop
 
 @section('js')
