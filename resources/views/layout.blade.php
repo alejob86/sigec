@@ -52,21 +52,22 @@
                     <li>
                         <h3 class="navigation-title">{{ trans('app.navigation') }}</h3>
                     </li>
+                    
                     <li><a href="{{ URL::to('dashboard') }}"><i class="fa fa-home"></i> <span>{{ trans('app.dashboard') }}</span></a></li>
+                    
                     <li class="menu-list">
-                        <a href=""><i class="fa fa-language"></i>  <span>{{ trans('app.language') }}</span></a>
-                        <ul class="child-list">
-                            <li>
-                                <a tabindex="-1" href="{{URL::to('lang/en')}}"><span></span><img src="{{URL::to('img/flags/usa_flag.jpg')}}" alt=""/></a>
-                            </li>
-                            <li>
-                                <a tabindex="-1" href="{{URL::to('lang/es')}}"><span></span> <img src="{{URL::to('img/flags/spain_flag.jpg')}}" alt=""/></a>
-                            </li>
-                            <li>
-                                <a tabindex="-1" href="{{URL::to('lang/pt')}}"><span></span> <img src="{{URL::to('img/flags/brazil_flag.jpg')}}" alt=""/></a>
-                            </li>           
-                        </ul>
-                    </li>  
+                        <a href=""><i class="fa fa-language"></i> <span> {{ trans('app.language') }} </span><img src="{{URL::to('img/flags/'.App::getLocale().'.png')}}" alt=""/> </a>
+                        <ul class="child-list ">
+                            @foreach (Config::get('languages') as $lang => $language)
+                                @if ($lang != App::getLocale())
+                                    <li>
+                                        <a tabindex="-1" href="{{URL::to('lang/'.$lang)}}"><img src="{{URL::to('img/flags/'.$lang.'.png')}}" alt=""/><span> {{trans("app.$lang")}} </span></a>
+                                    </li>
+                                @endif
+                            @endforeach                                   
+                        </ul>                        
+                    </li> 
+
                     <li class="menu-list">
                         <a href=""><i class="fa fa-users"></i>  <span>{{ trans('module.people') }}</span></a>
                         <ul class="child-list">
@@ -135,19 +136,18 @@
                         
 
                         <!-- Classic dropdown -->
-                        <li class="dropdown"><a href="javascript:;" data-toggle="dropdown" class="dropdown-toggle"> 
-                                <img src="{{URL::to('img/flags/usa_flag.jpg')}}" alt=""/> {{ App::getLocale() }} <b
-                                class=" fa fa-angle-down"></b></a>
+                        <li class="dropdown">
+                            <a href="javascript:;" data-toggle="dropdown" class="dropdown-toggle"> 
+                                <img src="{{URL::to('img/flags/'.App::getLocale().'.png')}}" alt=""/> {{ trans('app.'.App::getLocale()) }} <b class=" fa fa-angle-down"></b>
+                            </a>
                             <ul role="menu" class="dropdown-menu language-switch">
-                                <li>
-                                    <a tabindex="-1" href="javascript:;"><span> English </span><img src="{{URL::to('img/flags/usa_flag.jpg')}}" alt=""/></a>
-                                </li>
-                                <li>
-                                    <a tabindex="-1" href="javascript:;"><span> Spanish </span> <img src="{{URL::to('img/flags/spain_flag.jpg')}}" alt=""/></a>
-                                </li>
-                                <li>
-                                    <a tabindex="-1" href="javascript:;"><span> Portugués </span> <img src="{{URL::to('img/flags/brazil_flag.jpg')}}" alt=""/></a>
-                                </li>                                
+                                @foreach (Config::get('languages') as $lang => $language)
+                                    @if ($lang != App::getLocale())
+                                        <li>
+                                            <a tabindex="-1" href="{{URL::to('lang/'.$lang)}}"><span> {{trans("app.$lang")}} </span><img src="{{URL::to('img/flags/'.$lang.'.png')}}" alt=""/></a>
+                                        </li>
+                                    @endif
+                                @endforeach                                                               
                             </ul>
                         </li>
 
@@ -160,8 +160,6 @@
                 <!--right notification start-->
                 <div class="right-notification">
                     <ul class="notification-menu">
-                        
-                        
                         <li>
                             <a href="javascript:;" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
                                 {{ Auth::user()->name }}

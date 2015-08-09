@@ -12,6 +12,9 @@ return [
     |
     */
 
+    'en'            => 'ingles',
+    'es'            => 'español',
+    'pt'            => 'portugués',
     'title'         => 'SIGEC',
     'name'          => 'SIGEC',
     'navigation'    => 'navegación',
