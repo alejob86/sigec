@@ -18,6 +18,7 @@ return [
     'show_message'          =>  'dados pessoais',
     'create'                =>  'fazer',
     'create_message'        =>  'fazer uma nova pessoa',
+    'update_success_message'=>  'pessoa editada corretamente',
     'delete'                =>  'remover',
     'delete_message'        =>  'você realmente deseja excluir esta pessoa ?',
     'edit'                  =>  'editar',

@@ -21,5 +21,5 @@ return [
     'dashboard'     => 'dashboard',
     'language'      => 'language',
     'welcome_message'   => 'Welcome to SIGEC a system to manage Educational Institutions',
-
+    'result'        => 'result',
 ];

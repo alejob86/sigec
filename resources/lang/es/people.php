@@ -18,6 +18,7 @@ return [
     'create'                =>  'crear',
     'create_message'        =>  'crear una nueva persona',
     'show_message'          =>  'información sobre esta persona',
+    'update_success_message'=>  'persona editada correctamente',
     'delete'                =>  'eliminar',
     'delete_message'        =>  'esta seguro de querer eliminar a esta persona ?',
     'edit'                  =>  'editar',

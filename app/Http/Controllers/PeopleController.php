@@ -69,9 +69,11 @@ class PeopleController extends Controller
 	public function store(PeopleRequest $request)
 	{
 		//dd($request);
-		People::create($request->all());
+		$people = People::create($request->all());
 
-		return view('dashboard');
+        $message = trans('people.create_success_message');
+
+        return redirect('people')->with('OK', $message.' : '.$people->name.' '.$people->last_name);
 	}
 
 
@@ -102,7 +104,9 @@ class PeopleController extends Controller
 
 		$people->update($request->all());
 
-		return redirect('people');
+        $message = trans('people.update_success_message');
+
+		return redirect('people')->with('OK', $message.' : '.$people->name.' '.$people->last_name);
 
 	}
 
@@ -134,7 +138,9 @@ class PeopleController extends Controller
 
         $people->delete();
 
-        return view('dashboard');
+        $message = trans('people.delete_success_message');
+
+        return redirect('people')->with('OK', $message.' : '.$people->name.' '.$people->last_name);
 
     }
 }

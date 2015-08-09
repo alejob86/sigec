@@ -21,5 +21,6 @@ return [
     'dashboard'     => 'panel de control',
     'language'      => 'lenguaje',
     'welcome_message'   => 'Bienvenido a SIGEC, un sistema para la administracion de instituciones educativas',
+    'result'        => 'resultado',
 
 ];
