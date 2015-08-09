@@ -5,6 +5,7 @@
     <h3>
         {{trans('people.delete')}}
     </h3>
+    <span class="sub-title">{{trans('people.delete_message')}}</span>
     <div class="state-information">
         <i class="fa fa-trash-o fa-2x"></i>
     </div>

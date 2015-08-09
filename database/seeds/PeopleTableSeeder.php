@@ -52,5 +52,47 @@ class PeopleTableSeeder extends Seeder
             'email' => "oscar@prueba.com",
             'facebook' => "el-face@deoscar.com",
         ]);
+
+        DB::table('people')->insert([
+            'name' => "Andrea",
+            'last_name' => "Cerna",
+            'dni' => "1234567",
+            'birth_date' => "1986-09-16",
+            'street_name' => "Calle",
+            'street_number' => "1",
+            'floor' => "1",
+            'department' => "1",
+            'neightborhood' => "Las condes",
+            'country' => "Brazil",
+            'province' => "Sao Paulo",
+            'locality' => "Sao Paulo",
+            'postal_code' => "60000",
+            'cell_phone' => "2589631",
+            'phone' => "3333333",
+            'phone_at_work' => "555555",
+            'email' => "oscar@prueba.com",
+            'facebook' => "el-face@deoscar.com",
+        ]);
+
+        DB::table('people')->insert([
+            'name' => "Termi",
+            'last_name' => "Nator",
+            'dni' => "1234567",
+            'birth_date' => "1986-09-16",
+            'street_name' => "Calle",
+            'street_number' => "1",
+            'floor' => "1",
+            'department' => "1",
+            'neightborhood' => "Las condes",
+            'country' => "Brazil",
+            'province' => "Sao Paulo",
+            'locality' => "Sao Paulo",
+            'postal_code' => "60000",
+            'cell_phone' => "2589631",
+            'phone' => "3333333",
+            'phone_at_work' => "555555",
+            'email' => "oscar@prueba.com",
+            'facebook' => "el-face@deoscar.com",
+        ]);
     }
 }
